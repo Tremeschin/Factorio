@@ -7,10 +7,4 @@ for _, demolisher in pairs(data.raw["segmented-unit"]) do
     demolisher.patrolling_speed = 20.0
     demolisher.patrolling_turn_radius = 5
     demolisher.turn_radius = 5
-
-    -- Disable particles due to performance issues
-    -- demolisher.update_effects = {}
-    -- for _, effect in pairs(demolisher.update_effects) do
-        -- effect.distance_cooldown = 100000000
-    -- end
 end

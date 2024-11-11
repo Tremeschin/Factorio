@@ -10,6 +10,7 @@ dependencies = [
 
 [project.scripts]
 factorium = "Factorium.__main__:main"
+jimbo     = "Factorium.__main__:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["Factorium"]

@@ -1,1 +1,4 @@
+Release
 **/raw.lua
+**__pycache__*
+*.pyc
