@@ -65,7 +65,5 @@ class FactorioMod:
     # # Releases
 
     def release(self) -> Path:
-        BrokenPath.zip(
-            path=self.path,
-            output=(FACTORIUM_DIRS.BROKEN_RELEASES/f"{self.zip_name}.zip")
-        )
+        BrokenPath.zip(path=self.path,
+            output=(FACTORIUM_DIRS.REPO_RELEASES/f"{self.zip_name}.zip"))
