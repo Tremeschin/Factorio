@@ -51,13 +51,14 @@ class FactorioMod:
 
     @property
     def _mod_path(self) -> Path:
-        return (FACTORIUM_DIRS.FACTORIO/"mods"/self.zip_name)
+        return (FACTORIUM_DIRS.FACTORIO_MODS/self.zip_name)
 
     def install(self) -> None:
         BrokenPath.symlink(virtual=self._mod_path, real=self.path)
 
     def uninstall(self) -> None:
-        BrokenPath.remove(self._mod_path)
+        for path in FACTORIUM_DIRS.FACTORIO_MODS.glob(f"{self.info.name}*"):
+            BrokenPath.remove(path)
 
     def is_installed(self) -> bool:
         return (self._mod_path.resolve() == self.path)

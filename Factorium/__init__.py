@@ -15,3 +15,5 @@ if BrokenPlatform.OnLinux:
     FACTORIUM_DIRS.FACTORIO = (Path.home()/".factorio")
 else:
     log.warning("Factorium outside Linux isn't tested and may fail")
+
+FACTORIUM_DIRS.FACTORIO_MODS = FACTORIUM_DIRS.FACTORIO/"mods"

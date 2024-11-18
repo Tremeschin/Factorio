@@ -16,9 +16,10 @@ class FactoriumManager:
     def __attrs_post_init__(self):
         for path in BrokenPath.directories(FACTORIUM_DIRS.MODS):
             self.mods.append(FactorioMod(path))
-        self.typer.command(self.get_raw, help=True)
-        self.typer.command(self.install, help=True)
-        self.typer.command(self.release, help=True)
+        self.typer.command(self.get_raw,   help=True)
+        self.typer.command(self.install,   help=True)
+        self.typer.command(self.uninstall, help=True)
+        self.typer.command(self.release,   help=True)
 
     def cli(self, *args):
         self.typer(*args)
@@ -26,6 +27,10 @@ class FactoriumManager:
     def install(self):
         for package in self.mods:
             package.install()
+
+    def uninstall(self):
+        for package in self.mods:
+            package.uninstall()
 
     def release(self):
         for package in self.mods:
