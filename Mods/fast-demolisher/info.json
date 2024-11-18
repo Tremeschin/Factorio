@@ -1,9 +1,9 @@
 {
   "name": "fast-demolisher",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "factorio_version": "2.0",
   "title": "Fast Demolisher",
   "author": "Tremeschin",
-  "description": "Unlock the full PTSD experience of Vulcanus Enemies",
+  "description": "Unlock the full PTSD experience of Vulcanus Enemies with this mod! Dramatically increases the patrolling, investigating, and attacking speed of the enemies to a degree that's _slightly_ beyond reasonable (configurable)",
   "dependencies": ["base", "space-age"]
 }

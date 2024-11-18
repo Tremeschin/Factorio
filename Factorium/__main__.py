@@ -26,6 +26,7 @@ class FactoriumManager:
 
     def install(self):
         for package in self.mods:
+            package.uninstall()
             package.install()
 
     def uninstall(self):
