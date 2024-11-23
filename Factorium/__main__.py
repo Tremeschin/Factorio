@@ -10,19 +10,16 @@ from Factorium.Mods import FactorioMod
 
 @define
 class FactoriumManager:
-    typer: BrokenTyper = Factory(lambda: BrokenTyper(help=False))
+    cli: BrokenTyper = Factory(lambda: BrokenTyper(help=False))
     mods: List[FactorioMod] = Factory(list)
 
     def __attrs_post_init__(self):
         for path in BrokenPath.directories(FACTORIUM_DIRS.MODS):
             self.mods.append(FactorioMod(path))
-        self.typer.command(self.get_raw,   help=True)
-        self.typer.command(self.install,   help=True)
-        self.typer.command(self.uninstall, help=True)
-        self.typer.command(self.release,   help=True)
-
-    def cli(self, *args):
-        self.typer(*args)
+        self.cli.command(self.get_raw,   help=True)
+        self.cli.command(self.install,   help=True)
+        self.cli.command(self.uninstall, help=True)
+        self.cli.command(self.release,   help=True)
 
     def install(self):
         for package in self.mods:
