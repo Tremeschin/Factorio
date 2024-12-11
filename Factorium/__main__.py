@@ -1,5 +1,4 @@
 import sys
-from typing import List
 
 from attrs import Factory, define
 
@@ -11,7 +10,7 @@ from Factorium.Mods import FactorioMod
 @define
 class FactoriumManager:
     cli: BrokenTyper = Factory(lambda: BrokenTyper(help=False))
-    mods: List[FactorioMod] = Factory(list)
+    mods: list[FactorioMod] = Factory(list)
 
     def __attrs_post_init__(self):
         for path in BrokenPath.directories(FACTORIUM_DIRS.MODS):

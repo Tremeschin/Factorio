@@ -1,6 +1,5 @@
 import json
 from pathlib import Path
-from typing import List
 
 from attrs import define
 from dotmap import DotMap
@@ -40,7 +39,7 @@ class FactorioMod:
         return self.info.description
 
     @property
-    def dependencies(self) -> List[str]:
+    def dependencies(self) -> list[str]:
         return self.info.dependencies
 
     @property
